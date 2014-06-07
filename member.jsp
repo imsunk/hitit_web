@@ -198,7 +198,7 @@
 				</div>
 				<div class="caption">
 					<h3>홍원기(슈퍼덕후)</h3>
-					<p>연애가 하고 싶어요.</p>
+					<p></p>
 				</div>
 			</div>
 
