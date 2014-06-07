@@ -1,0 +1,26 @@
+ <Context reloadable="true">
+     <Resource name="jdbc/MysqlDB_hitit"
+         auth="Container"
+         type="javax.sql.DataSource"
+         username="hitit"
+         password="wjstks"
+         driverClassName="org.gjt.mm.mysql.Driver"
+         factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+         url="jdbc:mysql://localhost:3306/hitit"
+                 useUnicode="true"
+                 characterEncoding="UTF8"
+         maxActive="500"
+         maxIdle="100"/>
+     <Resource name="jdbc/MysqlDB_test2"
+         auth="Container"
+         type="javax.sql.DataSource"
+         username="root"
+         password="hitit!@34"
+         driverClassName="org.gjt.mm.mysql.Driver"
+         factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+         url="jdbc:mysql://localhost:3306/test2"
+                 useUnicode="true"
+                 characterEncoding="UTF8"
+         maxActive="500"
+         maxIdle="100"/>
+ </Context>

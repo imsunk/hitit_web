@@ -1,0 +1,31 @@
+#menu { height:20px; background-color:#ddd; padding:0px; background: url('/img/hitit_navigator.png'); margin: 5px 0px; }
+#menu .list { position:relative; background-color:#aaa; width:100px; height:20px; display:inline-block; margin: 0px; vertical-align:top; padding:0px}
+#menu .list a { border:0px solid black; width: 100px; height:20px; display:block; margin:0px}
+
+#menu .list a:hover { border-bottom:5px solid #000;}
+
+
+/* 네비게이터 익스플로어용 */
+#menu #list1 a { background:url('/img/hitit_navigator.png') 0 100px; }
+#menu #list2 a { background:url('/img/hitit_navigator.png') -100px 0px }
+#menu #list3 a { background:url('/img/hitit_navigator.png') -200px 0px }
+#menu #list4 a { background:url('/img/hitit_navigator.png') -300px 0px }
+#menu #list5 a { background:url('/img/hitit_navigator.png') -400px 0px }
+#menu #list6 a { background:url('/img/hitit_navigator.png') -500px 0px }
+
+/* 익스플로어에서 적용안됨 */
+#menu .list:nth-child(1) a { background:url('/img/hitit_navigator.png') 0 100px }
+#menu .list:nth-child(2) a { background:url('/img/hitit_navigator.png') -100px 0px }
+#menu .list:nth-child(3) a { background:url('/img/hitit_navigator.png') -200px 0px }
+#menu .list:nth-child(4) a { background:url('/img/hitit_navigator.png') -300px 0px }
+#menu .list:nth-child(5) a { background:url('/img/hitit_navigator.png') -400px 0px }
+#menu .list:nth-child(6) a { background:url('/img/hitit_navigator.png') -500px 0px }
+
+#menu .list:nth-child(1) a:hover { background:url('/img/hitit_navigator_over.png') 0 100px }
+#menu .list:nth-child(2) a:hover { background:url('/img/hitit_navigator_over.png') -100px 0px }
+#menu .list:nth-child(3) a:hover { background:url('/img/hitit_navigator_over.png') -200px 0px }
+#menu .list:nth-child(4) a:hover { background:url('/img/hitit_navigator_over.png') -300px 0px }
+#menu .list:nth-child(5) a:hover { background:url('/img/hitit_navigator_over.png') -400px 0px }
+#menu .list:nth-child(6) a:hover { background:url('/img/hitit_navigator_over.png') -500px 0px }
+
+#menu .list:first-child { margin-left: 0px; } /*베이스라인 확인할 것*/

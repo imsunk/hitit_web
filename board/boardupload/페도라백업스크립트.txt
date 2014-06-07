@@ -1,0 +1,1 @@
+ tar -pzcvf /fs.tgz --exclude=/bin --exclude=/dev --exclude=/boot --exclude=/lib --exclude=/lost+found --exclude=/media --exclude=/mnt --exclude=/opt --exclude=/proc --exclude=/run --exclude=/srv --exclude=/sbin --exclude=/tmp --exclude=/sys --exclude=/root/back_up/* --exclude=/usr/lib --exclude=/etc/fstab --exclude=/var/lib/yum/yumdb --exclude=fs.tgz /

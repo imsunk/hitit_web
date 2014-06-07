@@ -1,0 +1,27 @@
+				<!-- 사용안함 -->
+				<!--
+				<div id="board_right">
+					<ul id="notice_bd">
+						<li class="title"><a href="">공지사항</a></li>
+						<li class="list"><a href="">과제들 제출해주세요</a></li>
+						<li class="list"><a href="">월요일에 mockup 되있어야 합니다.</a></li>
+						<li class="list"><a href="">스터디 그룹 레포트 제출 잘 합시다.</a></li>
+						<li class="list"><a href="">아... 5강 강의자료도 올려야되고, 6강 준비도 해야되다니. 죽네요</a></li>
+					</ul>
+					<ul id="free_bd">
+						<li class="title"><a href="">자유게시판</a></li>
+						<li class="list"><a href="">강전구 학생의 IP차단이 풀렸습니다.</a></li>
+						<li class="list"><a href="./js_test.html">웹과 앱 4강 - css</a></li>
+						<li class="list"><a href="">스터디 그룹 구성</a></li>
+					</ul>
+					<ul id="qna_bd">
+						<li class="title"><a href="">조별 게시판</a></li>
+						<li class="list"><a href="http://hitit.chonbuk.ac.kr:8080/m2board/BoardList.bo?category=group1">1조 - Flagging at Street</a></li>
+						<li class="list"><a href="http://hitit.chonbuk.ac.kr:8080/m2board/BoardList.bo?category=group2">2조 - CC</a></li>
+						<li class="list"><a href="http://hitit.chonbuk.ac.kr:8080/m2board/BoardList.bo?category=group3">3조 - 대학생 커뮤니티</a></li>
+					</ul>
+					<ul id="study_bd">
+						<li class="title"><a href="">스터디 관련</a></li>
+						<li class="list"><a href="./BoardDetailAction.bo?num=79&category=xe">수업 - 5 - jsp기본</a></li>
+					</ul>
+				</div><!--div board-->

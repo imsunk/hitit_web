@@ -1,0 +1,37 @@
+#wrap { width: 960px; margin: 0 auto; }
+
+#head { height:100px; }
+
+#logo { width: 100px; height: 100px; background-color:#ddc}
+#top_banner { position:relative; top:-100px; left:100px; width: 855px; height: 100px; background: url("/img/hitit_top_banner.png"); margin-left:5px; }
+
+#contents { text-align:center; background-color:none; }
+#contents { 
+	min-height: 445px;
+	padding:10px;
+	border: 20px;
+	-moz-border-image:url('/img/Haunted Two.gif') 30 30 round; /* Old Firefox */
+	-webkit-border-image:url('/img/Haunted Two.gif') 30 30 round; /* Safari */
+	-o-border-image:url('/img/Haunted Two.gif') 30 30 round; /* Opera */
+	border-image:url('/img/Haunted Two.gif') 30 30 round;
+}
+#board { position:relative; }
+#board_left {position: absolute; top:0px; }
+#board_mid {position: absolute; top:0px; right: 295px; }
+#board_right {position: absolute; top:0px; right:0px; }
+#board_right ul { margin: 10px 10px; }
+#board_right li { border-bottom: 3px solid #eed}
+#board_right .title { background-color: #abc; }
+#notice_bd { width:280px; background-color:#cae; padding:0px; }
+#free_bd { width:280px; background-color:#eaa; padding:0px; }
+#qna_bd { width:280px; background-color:#acd; padding:0px; }
+#study_bd { width:280px; background-color:#ddf; padding:0px; }
+
+#contest { position:relative; top:380px; background-color:#abc; text-align: left; display:inline; } 
+
+a:link { text-decoration: none; color:#556677; }
+a:visited { text-decoration: none; color:#556677; }
+a:hover { text-decoration: none; color:red; font-weight: 900}
+a:active { text-decoration: none; color:yellow; }
+
+#foot { border-top:1px solid #ddd; border-bottom:1px solid #ddd; margin: 5px 0; padding: 10px; color:gray; }

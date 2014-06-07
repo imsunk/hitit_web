@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    errorPage="error.jsp" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>01.02 table Tag</title>
+</head>
+<body>
+<div>
+	<table width="1050" cellpadding="3px" cellspacing="3px" border="2" align="center" cellpadding="0" >
+		<tr bgcolor="#9c31ff" align="center" valign="center">
+			<td width="50" align="center">
+				<a href="http://hitit.chonbuk.ac.kr/xe"><img src="http://hitit.chonbuk.ac.kr:8080/image/logo_icon.png"></a>
+			</td>
+			<td><a href="http://hitit.chonbuk.ac.kr/xe/index.php?mid=test_board"><h2>게시판</h2></a></td>
+			<td bgcolor=red>(빨간색)</td>
+			<td><a href="http://www.naver.com">네이버</a></td>
+			<td><a href="http://www.daum.net">다음</a></td>
+			<td bgcolor=white>(하얀색)</td>
+			<td><a href="http://khub.ac.kr">K-hub</a></td>
+			<td><a href="http://seongdn22.blog.me"><h6>블로그</h6></a></td>
+		</tr>
+	</table>
+
+	<table cellpadding="0" cellspacing="0" border="2" align="center">
+		<td valign="top" bgcolor="#00FFFF">
+			<table width="130" height="250" cellpadding="0" cellspacing="5px" border="2">
+				<tr>
+					<th>연습용</td>
+				</tr>
+				<tr align="center">
+					<td>가운데</td>
+				</tr>
+				<tr align="right">
+					<td>오른쪽</td>
+				</tr>
+				<tr align="left">
+				   <td>왼쪽</td>
+				</tr>
+				<tr bgcolor=blue>
+					<td>파란색 배경</td>
+				</tr>
+			</table>
+		</td>
+		<td valign="middle" height="400">
+			<table cellpadding="5px" cellspacing="0" border="0">
+				<tr>
+					<td>
+						<div>						
+							<style>
+								td, th { width : 70px; padding:2px; border: #626262 solid 1px;}
+							</style>
+							<h1>스터디 그룹</h1>
+							<hr>
+							<form action="study_group_check.jsp" method="post">
+								<table>
+									<tr align="center">
+										<td>조</td>
+										<td>이름</td>
+										<td>date</td>
+										<td>present</td>
+										<td>language</td>
+										<td>line_opnnion</td>
+										<td>passwd</td>
+									</tr>
+									<tr>
+										<td>
+											<select name="group">
+												<option value="group_1">스터디1</option>
+												<option value="group_2">스터디2</option>
+												<option value="group_3">스터디3</option>
+											</select>
+										</td>
+										<td>
+											<select name="name">
+												<option value="name_1">성동녁</option>
+												<option value="name_2">강우영</option>
+												<option value="name_3">최요한</option>
+												<option value="name_4">홍원기</option>
+												<option value="name_5">김래선</option>
+												<option value="name_6">최인수</option>
+											</select>
+										</td>
+										<td>
+											<form>
+												<input type="date" />
+											</form>
+										</td>
+										<td>
+											<input type="radio" value="good" name="present" >good</input>
+											<input type="radio" value="late" name="present" >late</input>
+											<input type="radio" value="absent" name="present" >absent</input>
+										</td>
+										<td>
+											<input type="checkbox" value="java" name="language" >java</input>
+											<input type="checkbox" value="C++" name="language" >C++</input>
+											<input type="checkbox" value="HTML" name="language" >HTML</input>
+										</td>
+										<td>
+											<textarea rows="5" cols="30" name="contents" maxlength="100" />한마디 적어주세요.</textarea>
+										</td>
+										<td>
+											<input type="password" name="pass" /> 
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3" border="0"></td><td><input value="출석완료" type="submit" /></td><td colspan="2"></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</table>
+</div>
+</body>
+</html>

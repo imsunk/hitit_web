@@ -1,0 +1,73 @@
+<%@ page errorPage="error.jsp" contentType="text/html; charset=utf-8" import="java.util.*,java.sql.*,javax.sql.*,java.io.*" %><% response.setHeader("Cache-Control","max-age=0"); %><%! 
+	// DB 연결할 아이디 생성
+	String url, id = "root", passwd = "wjstks";	
+	public void jspInit() {
+		try {
+			url = "jdbc:mysql://localhost:3306/test2";
+			String option="?useUnicode=true";
+			url = url + option;
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+%><%
+	Connection conn = DriverManager.getConnection(url, id, passwd);
+	PreparedStatement ptmt = conn.prepareStatement("select name from hitit_names");
+	Connection conn2 = DriverManager.getConnection(url, id, passwd);
+	PreparedStatement ptmt2 = conn2.prepareStatement("SELECT b.day FROM hitit_names a, hitit_attendance b WHERE a.name=b.name GROUP BY b.day ORDER BY  DAY ");
+	ResultSet rs2 = ptmt2.executeQuery();
+
+	request.setCharacterEncoding("utf-8");
+
+	
+	int count = 0; // 오늘날짜를 넣자
+%>
+<div>
+	<style>
+		td, th { width : 70px; padding:2px; border: #abc solid 1px; }
+	</style>
+	<h1>스터디 그룹</h1>
+	<hr />
+	<form action="attendance_proc.jsp" method="post">
+		<table>
+			<tr>
+				<th>조</th><th>이름</th><% while(rs2.next()) { count++; %><th><%=rs2.getString(1)%></th><% } rs2.close(); %><th><input type="text" name="date" /></th>
+			</tr>
+<%
+	ptmt2 = conn2.prepareStatement("SELECT b.attendance FROM hitit_names a, hitit_attendance b WHERE a.name=b.name AND b.name=? ORDER BY  DAY");	
+	ResultSet rs = ptmt.executeQuery();
+
+	while(rs.next()){
+		ptmt2.setString(1,rs.getString(1));
+		rs2 = ptmt2.executeQuery();
+%>
+			<tr>
+				<td>1</td><td><%=rs.getString(1)%></td><% while(rs2.next()) { %><td><%=rs2.getBoolean(1)? "O": "X"%></td><% } rs2.close(); %><td><input type="hidden" name="group" value="<%=rs.getString(1)%>" /><input type="checkbox" name="attendance" value="<%=rs.getString(1)%>"/></td>
+			</tr>
+
+<%
+	}
+	rs.close();
+	ptmt.close();
+	ptmt2.close();
+	conn.close();
+	conn2.close();
+%>
+			<tr>
+				<td colspan="<%=count+2%>"><td><input type="submit" value="출석" /></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+
+
+<table style="width:200px; height:200px; border: 20px solid blue; margin:20px;">
+	<tr>
+		<td style="padding:40px">
+			block 엘리먼트 (개체) 의 특성 <br />
+			마진, 보더, 패딩
+		</td>
+	</tr>
+</table>

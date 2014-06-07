@@ -1,0 +1,195 @@
+	<style>
+	#left_slidemenu {
+		position:fixed; width:120px; height:440px; /*top:92px;네비게이션바 위치*/ top:130px; margin-left:-130px;
+		background: none;
+	}
+	#left_slidemenu #wing_banner1{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+		border-right: lightgray solid 1px; border-bottom: gray solid 1px;
+	}
+	#left_slidemenu #wing_banner2{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+	}
+	#left_slidemenu #wing_banner3{ /* 세이캐스트 */
+		width: 166px; height:102px; display:block; overflow:hidden; margin-left: 0px;
+		position: absolute; right: 0px;
+	}
+	#left_slidemenu #wing_banner4{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+	}
+	#left_slidemenu #wing_banner5{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+	}
+	#left_slidemenu #wing_banner6{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+	}
+	#left_slidemenu #wing_banner7{
+		width: 120px; height:65px; display:block; overflow:hidden; margin-left: 0px;
+	}
+	#left_slidemenu #wing_banner8{
+		width: 110px; height:99px; 
+	}
+
+
+
+	#left_slidemenu_counter {
+		position:absolute;width:25px; height:440px; /*top:92px;네비게이션바 위치*/ /*top:157px; right:935px;*/ top:239px; right:1007px;
+		background: none; font-size:12px;
+	}
+	#left_slidemenu_counter #wing_banner1{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner2{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner3{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner4{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner5{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner6{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter #wing_banner7{
+		width: 25px; height:11px; display:block; overflow:hidden; margin-left: 0px; margin-bottom:54px;
+	}
+	#left_slidemenu_counter p {width:20px}
+
+
+	#right_slidemenu {
+		position:fixed; width:120px; height:440px; top:130px; margin-left:970px;
+		background: none;
+	}
+	#right_slidemenu #wing_banner1{
+		width: 120px; height:50px;
+	}
+	#right_slidemenu #wing_banner2{
+		width: 120px; height:50px;
+	}
+	#right_slidemenu #wing_banner3{
+		width: 75px; height:50px; margin-top:-3px;
+	}
+	#right_slidemenu #wing_banner4{
+		margin-top:165px;
+		width: 100px; height:130px;
+	}
+	</style>
+	<!-- jquery 1.3.2 의 영향을 받음-->
+	<script type="text/javascript">
+	/*
+		$(document).ready(function(){
+			var currentPosition = parseInt($("#left_slidemenu").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+				$("#left_slidemenu").stop().animate({"top":position+currentPosition+"px"},300);
+			});
+		});
+		$(document).ready(function(){
+			var currentPosition = parseInt($("#right_slidemenu").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+				$("#right_slidemenu").stop().animate({"top":position+currentPosition+"px"},300);
+			});
+		});
+		$(document).ready(function(){ // 슬라이드 카운터도 같이 이동하게
+			var currentPosition = parseInt($("#left_slidemenu_counter").css("top"));
+			$(window).scroll(function() {
+				var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+				$("#left_slidemenu_counter").stop().animate({"top":position+currentPosition+"px"},300);
+			});
+		});
+	*/
+	</script>
+	<script>
+	/*
+	function updateBannerCount(num,count){
+		$('#count'+num).text(count);
+	}
+	
+	function initCount(){ // 리퀘스트 수를 늘려 좋은 방법은 아니다
+		//for(var i =7; i <= 7; i++){
+		//			checkingBannerClick(i);
+
+		//}
+		checkingBannerClick2(1);
+		checkingBannerClick2(2);
+		checkingBannerClick2(3);
+		checkingBannerClick2(4);
+		checkingBannerClick2(5);
+		checkingBannerClick2(6);
+		checkingBannerClick2(7);
+	}
+	function checkingBannerClick(num){
+		//카운트 1개 추가 하면서 카운트 결과 출력
+		$.ajax({
+			type: 'get'
+			, async: true
+			, url: '/check_banner_count.jsp?num='+num
+			, success: function(msg){
+				updateBannerCount(num,msg);
+			 }
+		});
+	}
+	function checkingBannerClick2(num){
+		// 카운트 추가하지 않으면서 카운트 결과 출력
+		$.ajax({
+			type: 'get'
+			, async: true
+			, url: '/check_banner_count2.jsp?num='+num
+			, success: function(msg){
+				updateBannerCount(num,msg);
+			 }
+		});
+	}*/
+
+	</script>
+			<div id="right_slidemenu">
+				<ul>
+					<li id="wing_banner1">
+						<a href="http://smile2x.tistory.com">
+							김래선의 티스토리<br />Stay hungry, Stay foolish
+						</a>
+					</li>
+					<li id="wing_banner2">
+						<a href="http://sesangsokuro.cafe24.com">
+							홍원기의 하키아
+						</a>
+					</li>
+					<li id="wing_banner">
+						<a href="http://hitit.chonbuk.ac.kr:8080/wongi/eng.jsp">
+							단어공부
+						</a>
+					</li>
+					<li id="wing_banner">
+						<a href="http://hitit.chonbuk.ac.kr:8080/kangwy/Project/blank.jsp">
+							1조 중고거래
+						</a>
+					</li>
+				</ul>
+			</div><!-- div right_slidemenu -->
+			<div id="left_slidemenu">
+				<ul>
+					<li id="wing_banner1"><a href="http://www.homejjang.com/" onclick="checkingBannerClick('1');" target="_blank"><img src="http://www.homejjang.com/images/logo.png" width="120" height="65" /></a></li>
+					<li id="wing_banner2"><a href="http://hitit.chonbuk.ac.kr:8081/GwtQuake.html" onclick="checkingBannerClick('2');" target="_blank"><img src="./img/quake2.png" width="120" height="65"/></a></li>
+				</ul>
+			</div>
+			<!--
+			<div id="left_slidemenu_counter">
+				<ul>
+					<li id="wing_banner1"><p id="count1">1</p></li>
+					<li id="wing_banner2"><p id="count2">1</p></li>
+					<li id="wing_banner3"><p id="count3">1</p></li>
+					<li id="wing_banner4"><p id="count4">1</p></li>
+					<li id="wing_banner5"><p id="count5">1</p></li>
+					<li id="wing_banner6"><p id="count6">1</p></li>
+					<li id="wing_banner7"><p id="count7">1</p></li>
+				</ul>
+			</div>
+			-->
+		<script>
+		//initCount();
+		</script>

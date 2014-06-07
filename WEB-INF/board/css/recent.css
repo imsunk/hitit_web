@@ -1,0 +1,27 @@
+		table { width: 300px; height:180px; padding: 2px; margin-top: 10px; }
+
+		td,a,th {
+			font-family:돋음;
+			font-size:12px;
+			color: black;
+		}
+		td {
+			max-height:20px;
+			border-top: 1px solid #abc;
+			padding-left:4px;
+		}
+		a:link { text-decoration: none; color:#556677; }
+		a:visited { text-decoration: none; color:#556677; }
+		a:hover { text-decoration: none; color:red; font-weight: 900}
+		a:active { text-decoration: none; color:yellow; }
+
+		.center {
+			text-align:center;
+		}
+
+		th {
+			height: 20px;
+			border-top: 2px solid #abc;
+			border-bottom: 2px solid #abc;
+			margin-bottom: 2px;
+		}

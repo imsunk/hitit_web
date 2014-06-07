@@ -1,0 +1,86 @@
+<div>
+	<style>
+		td, th { width : 70px; padding:2px; border: #abc solid 1px; }
+	</style>
+	<h1>스터디 그룹</h1>
+	<hr />
+	<form action="study_group_check.jsp" method="post">
+		<table>
+			<tr>
+				<th>조</th><th>이름</th><th>12/29(금)</th><th>12/31(월)</th>
+			</tr>
+			<tr>
+				<td>1</td><td>김래선</td><td>O</td><td><input type="checkbox" name="group1" value="김래선"/></td>
+			</tr>
+			<tr>
+				<td>1</td><td>김선호</td><td>O</td><td><input type="checkbox" name="group1" value="김선호" /></td>
+			</tr>
+			<tr>
+				<td>1</td><td>강전구</td><td>O</td><td><input type="checkbox" name="group1" value="강전구" /></td>
+			</tr>
+			<tr>
+				<td>1</td><td>고슬기</td><td>O</td><td><input type="checkbox" name="group1" value="고슬기" /></td>
+			</tr>
+			<tr>
+				<td>1</td><td>최인수</td><td>O</td><td><input type="checkbox" name="group1" value="최인수" /></td>
+			</tr>
+			<tr>
+				<td>1</td><td>김창성</td><td>O</td><td><input type="checkbox" name="group1" value="김창성" /></td>
+			</tr>
+			<tr>
+				<td rowspan="5">2</td><td>강우영</td><td>O</td><td><input type="checkbox" name="group2" value="강우영" /></td>
+			</tr>
+			<tr>
+				<td>성동녁</td><td>X</td><td><input type="checkbox" name="group2" value="성동녘" /></td>
+			</tr>
+			<tr>
+				<td>유지연</td><td>O</td><td><input type="checkbox" name="group2" value="유지연" /></td>
+			</tr>
+			<tr>
+				<td>조수민</td><td>O</td><td><input type="checkbox" name="group2" value="조수민" /></td>
+			</tr>
+			<tr>
+				<td>구경진</td><td>O</td><td><input type="checkbox" name="group2" value="구경진" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>홍원기</td><td>O</td><td><input type="checkbox" name="group3" value="홍원기" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>최요한</td><td>X</td><td><input type="checkbox" name="group3" value="최요한" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>곽민호</td><td>O</td><td><input type="checkbox" name="group3" value="곽민호" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>장영진</td><td>X</td><td><input type="checkbox" name="group3" value="장영진" /></td>
+			</tr>
+					<tr>
+				<td>3</td><td>이현수</td><td>O</td><td><input type="checkbox" name="group3" value="이현수" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>유인규</td><td>X</td><td><input type="checkbox" name="group3" value="유인규" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>김인창</td><td>X</td><td><input type="checkbox" name="group3" value="김인창" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>홍태영</td><td>O</td><td><input type="checkbox" name="group3" value="홍태영" /></td>
+			</tr>
+			<tr>
+				<td>3</td><td>양다솜</td><td>O</td><td><input type="checkbox" name="group3" value="양다솜" /></td>
+			</tr>
+			<tr>
+				<td colspan="3"><td><input type="submit" value="출석완료" /></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<table style="width:200px; height:200px; border: 20px solid blue; margin:20px;">
+	<tr>
+		<td style="padding:40px">
+			block 엘리먼트 (개체) 의 특성 <br />
+			마진, 보더, 패딩
+		</td>
+	</tr>
+</table>
