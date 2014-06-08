@@ -15,7 +15,7 @@ function checkId() {
 			if (data == -1) {
 				$('.checkedBox').html("You can't use this name");
 				setTimeout("makehiddent()", 1000 * 2);
-			} else if(data == 1){
+                                } else if(data == 1){
 				$('.checkedBox').html("Good");
 				setTimeout("makehiddent()", 1000 * 2);
 			}
