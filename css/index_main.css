@@ -21,8 +21,9 @@
 
 .checkedBox{
 	z-index:100;
-	background-color:#333;
-	color:#fff;
+	background-color:#edf0f5;
+	color:#000;
+	height:15px;
 /* 	display:none; */
 }
 
