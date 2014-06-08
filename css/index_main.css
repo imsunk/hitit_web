@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
 .layer {display:none; position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:100;}
 .layer .bg {position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
 .layer .pop-layer {display:block;}
@@ -12,9 +14,23 @@
 .pop-layer .pop-container {padding: 20px 25px;}
 .pop-layer p.ctxt {color: #666; line-height: 25px;}
 .pop-layer .btn-r {width: 100%; margin:10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align:right;}
+
 #login_mobile{
 	display:none;
 }
+
+.checkedBox{
+	z-index:100;
+	background-color:#333;
+	color:#fff;
+/* 	display:none; */
+}
+
+.navbar-fixed-top{
+	font-family: 'Nanum Pen Script', serif;
+	font-size : 26px;
+}
+
 .button_work{
 	float:right;
 }
@@ -22,7 +38,7 @@
 	margin-top:19px;
 }
 .button_work h3{
-	font-size:18px;
+	font-size:26px;
 }
 #who{
 	float:left;
@@ -36,6 +52,8 @@
 }
 
 .joinBanner{
+	font-family: 'Nanum Pen Script', serif;
+	font-size : 24px;
 	float:left;
 	margin-top:67px;
 	width:25%;

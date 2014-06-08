@@ -112,13 +112,14 @@
 				<img src="./img/joinus.gif">
 			</div>	
 			<div class="Banner">
-			<form class="form-horizontal"action="./MemberJoinAction.me" method="post">
+			<form class="form-horizontal"action="./MemberJoinAction.me" id = "joinForm" method="post">
 				<div class="form-group has-success">
-					<label class="col-xs-2 control-label" for="inputSuccess">ID</label>
+					<label class="col-xs-2 control-label" for="inputSuccess" >ID</label>
 					<div class="col-xs-10">
-						<input type="text" id="inputSuccess" name="id" class="form-control"
+						<input type="text" id="inputId" name="id" onkeypress="checkId(this.value)" class="form-control"
 							placeholder="Input with success">
-					</div>
+						<div class="checkedBox"></div>	
+					</div>					
 				</div>
 				<div class="form-group has-warning">
 					<label class="col-xs-2 control-label" for="inputWarning">PW</label>
@@ -166,7 +167,7 @@
 					</div>
 				</div>
 				<div class="submitButton">
-					<input type="submit" class="btn btn-primary" value="회원가입"></input>
+					<input type="button" class="btn btn-primary" value = "회원가입" onClick="joinChk()"></input>
 				</div>
 			</form>
 			</div>

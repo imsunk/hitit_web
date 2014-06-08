@@ -1,3 +1,65 @@
+/*------------------------------래선수정------------------------------*/
+function checkId(id) {
+//	alert("function in");
+	$.ajax({
+		url : 'http://hitit.jbnu.ac.kr:8080/idCheck',
+		type : 'POST',
+		data : {
+			"id" : id
+		},
+		dataType : 'html',
+		success : function(data) {
+			alert(data); // 결과 텍스트를 경고창으로 보여준다.
+			if (data == '-1') {
+				$('.checkedBox').innerHTML("You can't use this name");
+				setTimeout("makehiddent()", 1000 * 2);
+			} else if(data == '1'){
+				$('.checkedBox').innerHTML("Good");
+				setTimeout("makehiddent()", 1000 * 2);
+			}
+		}
+	});
+}
+function makehidden(){
+	$('.checkedBox').innerHTML("");
+}
+
+function joinChk() {
+	var check = document.getElementById('joinForm');
+
+	if (check.id.value=="") {
+		alert("아이디를 입력하세요");
+		check.member_id.focus();
+		return false;
+	}
+
+	if (check.pw.value=="") {
+		alert("비밀번호를 입력하세요");
+		check.member_password.focus();
+		return false;
+	}
+
+	if (check.major.value == "") {
+		alert("전공을 입력하세요");
+		check.major.focus();
+		return false;
+	}
+
+	if (check.name.value == "") {
+		alert("이름을 입력해 주세요");
+		check.name.focus();
+		return false;
+	}
+
+	if (check.email.value == "") {
+		alert("주민등록번호를 입력하세요");
+		check.email.focus();
+		return false;
+	}
+	check.submit();
+}
+/* 폼체크를 모두 통과하면 폼을 submit 한다. */ 
+/*------------------------------래선수정 끝------------------------------*/
 
 
 // Activates the Carousel

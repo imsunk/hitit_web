@@ -72,8 +72,6 @@ public class MemberDAO {
 			pstmt.setString(6, member.getM_EMAIL());
 			pstmt.setString(7, member.getAddress());
 			result=pstmt.executeUpdate();
-			
-
 			if(result!=0){
 				return true;
 			}
@@ -86,6 +84,28 @@ public class MemberDAO {
 		}
 		
 		return false;
+	}
+	
+	public int idCheck(String id){
+		String sql="select id from member where id=?";
+		int result = 0;
+		try{
+			con = ds.getConnection();
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=-1;
+			}
+		}catch(Exception ex){
+			System.out.println("idCheck 에러: " + ex);			
+		}finally{
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		
+		return result;
 	}
 	
 	public List getMemberList(){
