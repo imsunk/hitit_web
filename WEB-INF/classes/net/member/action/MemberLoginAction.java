@@ -21,8 +21,8 @@ public class MemberLoginAction implements Action{
 	   		
 	   		int result=-1;
 	   		
-	   		member.setM_ID(request.getParameter("M_ID"));
-	   		member.setM_PW(request.getParameter("M_PW"));
+	   		member.setM_ID(request.getParameter("id"));
+	   		member.setM_PW(request.getParameter("pw"));
 	   		result=memberdao.isMember(member);
 	   		
 	   		if(result==0){
@@ -43,13 +43,13 @@ public class MemberLoginAction implements Action{
 		   		out.println("</script>");
 		   		out.close();
 		   		return null;
-		   	}
-	   		
-	   		//로그인 성공
-	   		session.setAttribute("id", member.getM_ID());
-	   		
-	   		forward.setRedirect(true);
-	   		forward.setPath("./BoardList.bo");
-	   		return forward;
+		   	}else{		   		
+		   		//로그인 성공
+		   		session.setAttribute("id", member);
+		   		
+		   		forward.setRedirect(true);
+		   		forward.setPath("./index.me");
+		   		return forward;
+	   		}
 	}
 }

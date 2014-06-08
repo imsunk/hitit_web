@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 	 static final long serialVersionUID = 1L;
 	 protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 	 	throws ServletException, IOException {
-		 System.out.print("member");
+//		 System.out.print("member");
 		 String RequestURI=request.getRequestURI();
 		 String contextPath=request.getContextPath();
 		 String command=RequestURI.substring(contextPath.length());
@@ -56,6 +56,10 @@ import javax.servlet.http.HttpServletResponse;
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
+		   }else if(command.equals("/index.me")){
+			   forward=new ActionForward();
+			   forward.setRedirect(false);
+			   forward.setPath("./index.jsp");
 		   }else if(command.equals("/MemberDeleteAction.me")){
 			   action = new MemberDeleteAction();
 			   try{
@@ -64,6 +68,7 @@ import javax.servlet.http.HttpServletResponse;
 				   e.printStackTrace();
 			   }
 		   }
+		   
 		   if(forward != null){
 		   if(forward.isRedirect()){
 			   response.sendRedirect(forward.getPath());
@@ -77,7 +82,7 @@ import javax.servlet.http.HttpServletResponse;
 	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
-		System.out.println("get");
+//		System.out.println("get");
 		doProcess(request,response);
 	}  	
 	

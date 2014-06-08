@@ -48,12 +48,19 @@
 			<li><a href="member.jsp">살고있는사람들</a></li>
 			<li id="login_mobile" ><a href="login.jsp">로그인</a></li>
 		</ul>
-
-		
 	</div>
+	<%if (session==null){ 
+		System.out.println("session null"); %>
 	<div class="button_work">
 			<button class="btn btn-primary" onclick="layer_open('signin');return false;">로그인</button>
 	</div>
+	<% }else{ 
+		System.out.println("session nullxxx"); %>
+	<div class="button_work">
+		<h3><%id %>님 환영합니다.</h3>
+		<a href="./MemberLogout.me"><h3>로그아웃</h3></a>
+	</div> 
+	<%} %>
 	<!-- /.navbar-collapse -->	
 
 </div>

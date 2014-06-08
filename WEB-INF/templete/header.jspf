@@ -1,8 +1,0 @@
-			<div id="head">
-				<div id="logo">
-					<a href="index.jsp"><img src="img/logo_icon.png" id="logoImg" width="100" height="100" alt="로고" /></a>
-				</div>
-				<div id="top_banner" style="position:relative;">
-					<iframe src="http://saycast.sayclub.com/saycast/widget/widgetMini/24sky" width="160" height="100" style="position:absolute; right:0px; margin-top:-22px; background: rgba(0,0,0, 0.3)" scrolling="no"></iframe>
-				</div>
-			</div>

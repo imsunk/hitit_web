@@ -1,6 +1,7 @@
 package net.member.action;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletResponse;
 
 import net.member.action.ActionForward;
@@ -11,7 +12,7 @@ public class MemberJoinAction implements Action{
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 	throws Exception{
 		 	request.setCharacterEncoding("utf-8");
-		 	
+		 	HttpSession session=request.getSession();
 		 	ActionForward forward = new ActionForward();
 		 	
 			MemberDAO memberdao=new MemberDAO();
@@ -19,12 +20,13 @@ public class MemberJoinAction implements Action{
 	   		
 	   		boolean result=false;
 	   		
-	   		member.setM_ID(request.getParameter("M_ID"));
-	   		member.setM_PW(request.getParameter("M_PW"));
-	   		member.setM_NAME(request.getParameter("M_NAME"));
-	   		member.setM_AGE(Integer.parseInt(request.getParameter("M_AGE")));
-	   		member.setM_GENDER(request.getParameter("M_GENDER"));
-	   		member.setM_EMAIL(request.getParameter("M_EMAIL"));
+	   		member.setM_ID(request.getParameter("id"));
+	   		member.setM_PW(request.getParameter("pw"));
+	   		member.setMajor(request.getParameter("major"));
+	   		member.setM_NAME(request.getParameter("name"));
+	   		member.setNickName(request.getParameter("nickName"));
+	   		member.setM_EMAIL(request.getParameter("email"));
+	   		member.setAddress(request.getParameter("address"));
 	   		
 	   		result=memberdao.joinMember(member);
 	   		
@@ -34,10 +36,10 @@ public class MemberJoinAction implements Action{
 		   	} else {
 				System.out.println("회원가입 성공");
 			}
-	   		
+	   		session.setAttribute("id",request.getParameter("id"));
 	   		//회원가입 성공.
 	   		forward.setRedirect(true);
-	   		forward.setPath("./MemberLogin.me");
+	   		forward.setPath("./index.me");
 	   		return forward;
 	}
 }

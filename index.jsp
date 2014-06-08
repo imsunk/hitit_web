@@ -1,4 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8"%><% response.setHeader("Cache-Control","max-age=0"); %>
+
+<%
+  request.setCharacterEncoding("utf-8");
+  if(session!=null){
+	  String id = (String)session.getAttribute("id");
+	  String name = (String)session.getAttribute("name");
+  }
+  %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -56,7 +64,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<%@include file="./in_navibar.jspf"%>
 	</nav>
-	
+	<% if (session==null) {%>	
 	<div id="myCarousel" class="carousel slide">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -96,102 +104,118 @@
 				</div>
 			</div>
 		</div>
-
-<!-- 		<div class="section"> -->
-
-<!-- 			<div class="container"> -->
-
-<!-- 				<div class="row"> -->
-					
-<!-- 					<div class="col-lg-6 col-md-6 col-sm-6"> -->
-<!-- 						<h2>노예처럼 코더가 된다!!</h2> -->
-<!-- 						<ul> -->
-<!-- 							<li>시험기간만 되면 대여섯 마리씩 모여 날을 샌다고 하는데</li> -->
-<!-- 							<li>Java 전문! 안드로이드 전문! 웹 (Jsp) 전문 동아리!</li> -->
-<!-- 							<li>printf 만 찍다 죽으려면 다른데 가라!</li> -->
-<!-- 							<li>1일 1닭 전문</li> -->
-<!-- 							<li>if( 닭 ) { out.println( " !!!  TRUUUEEEEEEE !!!" ); }</li> -->
-<!-- 							<li>당신의 배때기를 부르게 만드는 밥동아리 힛잇!</li> -->
-<!-- 						</ul> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				/.row -->
-
-<!-- 			</div> -->
-<!-- 			<!-- /.container --> 
-
-<!-- 		</div> -->
-<!-- 		<!-- /.section --> 
-		
 	</div>
 	<div class="joinBanner">
 		<div class="joinWrap">
-		<div class="join">
-			<img src="./img/joinus.gif">
-		</div>	
-		<div class="Banner">
-		<form class="form-horizontal">
-			<div class="form-group has-success">
-				<label class="col-xs-2 control-label" for="inputSuccess">ID</label>
-				<div class="col-xs-10">
-					<input type="text" id="inputSuccess" class="form-control"
-						placeholder="Input with success">
+			<div class="join">
+				<img src="./img/joinus.gif">
+			</div>	
+			<div class="Banner">
+			<form class="form-horizontal"action="./MemberJoinAction.me" method="post">
+				<div class="form-group has-success">
+					<label class="col-xs-2 control-label" for="inputSuccess">ID</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputSuccess" name="id" class="form-control"
+							placeholder="Input with success">
+					</div>
 				</div>
-			</div>
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">PW</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">PW</label>
+					<div class="col-xs-10">
+						<input type="password" id="inputWarning" name="pw" class="form-control"
+							placeholder="Input with warning">
+					</div>
 				</div>
-			</div>
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">전공</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">전공</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputWarning" name="major" class="form-control"
+							placeholder="Input with warning">
+					</div>
 				</div>
-			</div>
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">이름</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">이름</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputWarning" name="name" class="form-control"
+							placeholder="Input with warning">
+					</div>
 				</div>
-			</div>
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">별명</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
-					<span class="help-block">앞으로 이걸로 부를거임</span>
-					
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">별명</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputWarning" name="nickName" class="form-control"
+							placeholder="Input with warning">
+						<span class="help-block">앞으로 이걸로 부를거임</span>
+						
+					</div>
 				</div>
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">Email</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputWarning" name="email" class="form-control"
+							placeholder="Input with warning">
+					</div>
+				</div>
+				
+				<div class="form-group has-warning">
+					<label class="col-xs-2 control-label" for="inputWarning">서식지</label>
+					<div class="col-xs-10">
+						<input type="text" id="inputWarning" name = "address" class="form-control"
+							placeholder="Input with warning">
+					</div>
+				</div>
+				<div class="submitButton">
+					<input type="submit" class="btn btn-primary" value="회원가입"></input>
+				</div>
+			</form>
 			</div>
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">Email</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
+		</div>
+	</div>
+	<%}else{ %>
+	
+	
+	
+	<div id="myCarousel" class="carousel slide" style="width:100%">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item">
+				<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Hitit ?');"></div>
+				<div class="carousel-caption">
 				</div>
 			</div>
 			
-			<div class="form-group has-warning">
-				<label class="col-xs-2 control-label" for="inputWarning">서식지</label>
-				<div class="col-xs-10">
-					<input type="password" id="inputWarning" class="form-control"
-						placeholder="Input with warning">
+			<div class="item active">
+				<div class="fill" style="background-image:url('./img/main_1.jpg');"></div>
+				
+			</div>
+			
+			<div class="item">
+				<div class="fill" style="background-image:url('./img/main_3.jpg');"></div>
+				
+			</div>
+			<div class="item">
+				<div class="fill" style="background-image:url('./img/main_4.jpg');"></div>
+				<div class="carousel-caption">
 				</div>
 			</div>
-			<div class="submitButton">
-				<button type="button" class="btn btn-primary" >회원가입</button>
+
+			<div class="item">
+				<div class="fill" style="background-image:url('./img/main_5.jpg');"></div>
+				<div class="carousel-caption">
+				</div>
 			</div>
-		</form>
 		</div>
-		</div>
-	</div>
-	
-	<div class="clear"></div>
+	</div>	
+	<% } %>
 	<div class="container" style="width:100%">
 		<footer>
 			<div class="row">
@@ -211,17 +235,17 @@
 		<div id="signin" class="pop-layer">
 			<div class="pop-container">
 				<div class="pop-conts">
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="./MemberLoginAction.me" method="post">
 						<div class="form-group has-success">
 							<label class="col-xs-2 control-label" for="inputSuccess">ID</label>
 							<div class="col-xs-10">
-								<input type="text" id="inputSuccess" class="form-control" placeholder="Input with success"> 
+								<input type="text" id="inputSuccess" name="id" class="form-control" placeholder="Input with success"> 
 							</div>
 						</div>
 						<div class="form-group has-warning">
 							<label class="col-xs-2 control-label" for="inputWarning">PW</label>
 							<div class="col-xs-10">
-								<input type="password" id="inputWarning" class="form-control" placeholder="Input with warning"> 
+								<input type="password" id="inputWarning" name="pw" class="form-control" placeholder="Input with warning"> 
 							</div>
 						</div>
 					</form>
@@ -230,35 +254,6 @@
 		</div>
 	</div>
 	
-	<div class="layer2">
-		<div class="bg"></div>
-		<div id="signup" class="pop-layer">
-			<div class="pop-container">
-				<div class="pop-conts">
-					<form class="form-horizontal">
-						<div class="form-group has-success">
-							<label class="col-xs-2 control-label" for="inputSuccess">ID</label>
-							<div class="col-xs-10">
-								<input type="text" id="inputSuccess" class="form-control" placeholder="Input with success"> 
-							</div>
-						</div>
-						<div class="form-group has-warning">
-							<label class="col-xs-2 control-label" for="inputWarning">PW</label>
-							<div class="col-xs-10">
-								<input type="password" id="inputWarning" class="form-control" placeholder="Input with warning"> 
-							</div>
-						</div>
-						<div class="form-group has-warning">
-							<label class="col-xs-2 control-label" for="inputWarning">Email</label>
-							<div class="col-xs-10">
-								<input type="password" id="inputWarning" class="form-control" placeholder="Input with warning"> 
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- JavaScript -->
 	<script src="js/jquery-1.10.2.js"></script>
 	<script src="js/bootstrap.js"></script>

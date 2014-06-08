@@ -28,7 +28,7 @@ public class MemberDAO {
 	}
 	
 	public int isMember(MemberBean member){
-		String sql="SELECT M_PW FROM MEMBER WHERE M_ID=?";
+		String sql="SELECT PW FROM MEMBER WHERE ID=?";
 		int result=-1;
 		
 		try{
@@ -38,8 +38,7 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()){
-				if(rs.getString("M_PW").equals(
-									member.getM_PW())){
+				if(rs.getString("PW").equals(member.getM_PW())){
 					result=1;//일치.
 				}else{
 					result=0;//불일치.
@@ -59,7 +58,7 @@ public class MemberDAO {
 	}
 	
 	public boolean joinMember(MemberBean member){
-		String sql="INSERT INTO MEMBER VALUES (?,?,?,?,?,?)";
+		String sql="INSERT INTO member VALUES (?,?,?,?,?,?,?)";
 		int result=0;
 		
 		try{
@@ -67,11 +66,14 @@ public class MemberDAO {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, member.getM_ID());
 			pstmt.setString(2, member.getM_PW());
-			pstmt.setString(3, member.getM_NAME());
-			pstmt.setString(4, member.getM_EMAIL());
-			pstmt.setString(5, member.getMajor());
+			pstmt.setString(3, member.getMajor());
+			pstmt.setString(4, member.getM_NAME());
+			pstmt.setString(5, member.getNickName());
+			pstmt.setString(6, member.getM_EMAIL());
+			pstmt.setString(7, member.getAddress());
 			result=pstmt.executeUpdate();
 			
+
 			if(result!=0){
 				return true;
 			}
@@ -97,15 +99,15 @@ public class MemberDAO {
 			
 			while(rs.next()){
 				MemberBean mb=new MemberBean();
-				mb.setM_ID(rs.getString("id"));
-				mb.setM_PW(rs.getString("pw"));
-				mb.setM_NAME(rs.getString("name"));
-				mb.setM_EMAIL(rs.getString("email"));
-				mb.setMajor(rs.getString("major"));
-				
+				mb.setM_ID(rs.getString("ID"));
+				mb.setM_PW(rs.getString("PW"));
+				mb.setMajor(rs.getString("Major"));
+				mb.setM_NAME(rs.getString("Name"));
+				mb.setM_EMAIL(rs.getString("Email"));
+				mb.setAddress(rs.getString("Address"));
+				mb.setNickName(rs.getString("NickName"));
 				memberlist.add(mb);
 			}
-			
 			return memberlist;
 		}catch(Exception ex){
 			System.out.println("getDeatilMember 에러: " + ex);			
@@ -117,9 +119,7 @@ public class MemberDAO {
 		return null;
 	}
 	
-	/////
 
-	/////
 	public MemberBean getDetailMember(String id){
 		String sql="SELECT * FROM MEMBER WHERE M_ID=?";
 		
@@ -131,11 +131,15 @@ public class MemberDAO {
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();
 			rs.next();
-			mb.setM_ID(rs.getString("id"));
-			mb.setM_PW(rs.getString("pw"));
-			mb.setM_NAME(rs.getString("name"));
-			mb.setM_EMAIL(rs.getString("email"));
-			mb.setMajor(rs.getString("major"));
+
+			mb.setM_ID(rs.getString("ID"));
+			mb.setM_PW(rs.getString("PW"));
+			mb.setMajor(rs.getString("Major"));
+			mb.setM_NAME(rs.getString("Name"));
+			mb.setM_EMAIL(rs.getString("Email"));
+			mb.setAddress(rs.getString("Address"));
+			mb.setNickName(rs.getString("NickName"));
+
 			return mb;
 		}catch(Exception ex){
 			System.out.println("getDeatilMember 에러: " + ex);			
@@ -177,7 +181,7 @@ public class MemberDAO {
 	*/
 	public boolean deleteMember(String id){
 		String sql1 = "DELETE FROM M_BOARD WHERE MB_ID=?";
-		String sql2="DELETE FROM MEMBER WHERE M_ID=?";
+		String sql2 = "DELETE FROM MEMBER WHERE ID=?";
 		boolean isSuccess = false;
 		int result1=0;
 		int result2=0;

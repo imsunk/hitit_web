@@ -3,9 +3,11 @@ package net.member.db;
 public class MemberBean {
 	private String M_ID;
 	private String M_PW;
-	private String M_NAME;
-	private String M_EMAIL;
 	private String major;
+	private String M_NAME;
+	private String nickName;
+	private String M_EMAIL;
+	private String address;
 	
 	public String getM_ID() {
 		return M_ID;
@@ -40,4 +42,21 @@ public class MemberBean {
 	public void setM_EMAIL(String member_email) {
 		M_EMAIL = member_email;
 	}
+	
+	public void setNickName(String nickName){
+		nickName = nickName;
+	}
+	
+	public String getNickName(){
+		return nickName;
+	}
+
+	public void setAddress(String address){
+		address = address;
+	}
+	
+	public String getAddress(){
+		return address;
+	}
+	
 }

@@ -207,11 +207,20 @@
 		<div class=row>
 			<div class="four_rows">
 				<div class="thumbnail">
-					<img src="/img/face/laesunk.jpg" alt="Generic placeholder thumbnail">
+					<img src="/img/face/laesunk.jpg">
 				</div>
 				<div class="caption">
 					<h3>김래선(반덕후)</h3>
 					<p>전북대학교 컴퓨터공학부 07</p>
+				</div>
+			</div>
+			<div class="four_rows">
+				<div class="thumbnail">
+					<img src="/img/face/donghyuk.jpg">
+				</div>
+				<div class="caption">
+					<h3>서동혁</h3>
+					<p>전북대학교 수학과 13</p>
 				</div>
 			</div>
 		</div>

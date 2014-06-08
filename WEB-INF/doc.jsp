@@ -1,1 +1,0 @@
-<%@ page errorPage="error.jsp" pageEncoding="utf-8" contentType="text/html; charset=utf-8"%><% response.setHeader("Cache-Control","max-age=0"); %><pre><%@ include file="doc/oop.jspf" %></pre>
