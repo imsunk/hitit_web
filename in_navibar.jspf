@@ -58,7 +58,7 @@
 	<% }else{ %>
 	<div class="button_work">
 		<div id ="who">
-			<h3><%=session.getAttribute("id")%>  님 환영합니다.</h3>
+			<h3><%=session.getAttribute("id")%>  님 환영합니다</h3>
 		</div>
 		<div id ="logoutbutton">
 			<a href="./MemberLogoutAction.me"><h3>로그아웃</h3></a>
