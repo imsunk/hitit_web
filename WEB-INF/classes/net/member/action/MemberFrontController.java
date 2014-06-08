@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
 			   forward.setPath("./member/loginForm.jsp");
-		   }else if(command.equals("/idCheck")){
+		   }else if(command.equals("/idCheck.me")){
 			   action = new MemberIdCheckAction();
 			   try{
 				   forward = action.execute(request,response);

@@ -116,7 +116,7 @@
 				<div class="form-group has-success">
 					<label class="col-xs-2 control-label" for="inputSuccess" >ID</label>
 					<div class="col-xs-10">
-						<input type="text" id="inputId" name="id" onkeypress="checkId(this.value)" class="form-control"
+						<input type="text" id="inputId" name="id" onkeypress="checkId()" class="form-control"
 							placeholder="Input with success">
 						<div class="checkedBox"></div>	
 					</div>					

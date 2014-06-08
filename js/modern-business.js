@@ -1,28 +1,28 @@
 /*------------------------------래선수정------------------------------*/
-function checkId(id) {
-//	alert("function in");
+
+function checkId() {
+//	alert("function in "+ id);
+	var id = $('#inputId').val();
 	$.ajax({
-		url : 'http://hitit.jbnu.ac.kr:8080/idCheck',
+		url : 'http://hitit.jbnu.ac.kr:8080/idCheck.me',
 		type : 'POST',
 		data : {
 			"id" : id
 		},
 		dataType : 'html',
 		success : function(data) {
-			alert(data); // 결과 텍스트를 경고창으로 보여준다.
-			if (data == '-1') {
-				$('.checkedBox').innerHTML("You can't use this name");
+//			alert(data); // 결과 텍스트를 경고창으로 보여준다.
+			if (data == -1) {
+				$('.checkedBox').html("You can't use this name");
 				setTimeout("makehiddent()", 1000 * 2);
-			} else if(data == '1'){
-				$('.checkedBox').innerHTML("Good");
+			} else if(data == 1){
+				$('.checkedBox').html("Good");
 				setTimeout("makehiddent()", 1000 * 2);
 			}
 		}
 	});
 }
-function makehidden(){
-	$('.checkedBox').innerHTML("");
-}
+
 
 function joinChk() {
 	var check = document.getElementById('joinForm');

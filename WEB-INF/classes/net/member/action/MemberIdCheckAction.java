@@ -18,12 +18,13 @@ public class MemberIdCheckAction implements Action{
 	   		if((memberdao.idCheck(request.getParameter("id")))==-1){
 	   			response.setContentType("text/html;charset=utf-8");
 		   		PrintWriter out=response.getWriter();
-		   		out.println("-1");
+		   		out.println("-1");	   		
+		   		
 		   		out.close();
 	   		}else{
 	   			response.setContentType("text/html;charset=utf-8");
 		   		PrintWriter out=response.getWriter();
-		   		out.println("1");
+		   		out.println("1");		   		
 		   		out.close();
 	   		}
 	   		return forward;
