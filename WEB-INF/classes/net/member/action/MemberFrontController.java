@@ -28,6 +28,13 @@ import javax.servlet.http.HttpServletResponse;
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
 			   forward.setPath("./member/joinForm.jsp");
+		   }else if(command.equals("/MemberLogoutAction.me")){
+			   action=new MemberLogoutAction();
+			   try{
+				   forward=action.execute(request,response);
+			   }catch(Exception e){
+				   e.printStackTrace();
+			   }
 		   }else if(command.equals("/MemberLoginAction.me")){
 			   action = new MemberLoginAction();
 			   try{

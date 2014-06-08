@@ -14,9 +14,16 @@ public class MemberLogoutAction implements Action{
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 	throws Exception{
 		 	ActionForward forward = new ActionForward();
-		 	System.out.println("logout");
-		 	HttpSession session=request.getSession(false);
-		 	session.invalidate();	
+//		 	System.out.println("logout");
+		 	HttpSession session=request.getSession();
+		 	session.invalidate();
+		 	response.setContentType("text/html;charset=utf-8");
+	   		PrintWriter out=response.getWriter();
+	   		out.println("<script>");
+	   		out.println("alert('로그아웃되었습니다');");
+	   		out.println("</script>");
+		 	forward.setRedirect(true);
+	   		forward.setPath("./index.jsp");
 	   		return forward;
 		}
 }

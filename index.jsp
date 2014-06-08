@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=utf-8"%><% response.setHeader("Cache-Control","max-age=0"); %>
+<%@ page contentType="text/html; charset=utf-8" %><% response.setHeader("Cache-Control","max-age=0"); %>
 
 <%
   request.setCharacterEncoding("utf-8");
-  if(session!=null){
+  
+  if(session.getAttribute("id")!=null){
 	  String id = (String)session.getAttribute("id");
-	  String name = (String)session.getAttribute("name");
+	  System.out.println(id);
   }
   %>
 <!DOCTYPE html>
@@ -64,7 +65,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<%@include file="./in_navibar.jspf"%>
 	</nav>
-	<% if (session==null) {%>	
+	<% if (session.getAttribute("id")==null) {%>	
 	<div id="myCarousel" class="carousel slide">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -174,7 +175,6 @@
 	<%}else{ %>
 	
 	
-	
 	<div id="myCarousel" class="carousel slide" style="width:100%">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -247,6 +247,9 @@
 							<div class="col-xs-10">
 								<input type="password" id="inputWarning" name="pw" class="form-control" placeholder="Input with warning"> 
 							</div>
+						</div>
+						<div class="form-group has-warning">
+							<input type="submit" class="btn btn-primary" value="Go!"></input>
 						</div>
 					</form>
 				</div>

@@ -1,5 +1,7 @@
 <%@ page errorPage="500.jsp" contentType="text/html; charset=utf-8"%>
-<% response.setHeader("Cache-Control","max-age=0"); %>
+<% response.setHeader("Cache-Control","max-age=0");
+   
+%>
 <div class="container">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -49,16 +51,19 @@
 			<li id="login_mobile" ><a href="login.jsp">로그인</a></li>
 		</ul>
 	</div>
-	<%if (session==null){ 
-		System.out.println("session null"); %>
+	<%if (session.getAttribute("id")==null){ %>
 	<div class="button_work">
 			<button class="btn btn-primary" onclick="layer_open('signin');return false;">로그인</button>
 	</div>
-	<% }else{ 
-		System.out.println("session nullxxx"); %>
+	<% }else{ %>
 	<div class="button_work">
-		<h3><%id %>님 환영합니다.</h3>
-		<a href="./MemberLogout.me"><h3>로그아웃</h3></a>
+		<div id ="who">
+			<h3><%=session.getAttribute("id")%>  님 환영합니다.</h3>
+		</div>
+		<div id ="logoutbutton">
+			<a href="./MemberLogoutAction.me"><h3>로그아웃</h3></a>
+		</div>
+		<div class="clear"></div>
 	</div> 
 	<%} %>
 	<!-- /.navbar-collapse -->	

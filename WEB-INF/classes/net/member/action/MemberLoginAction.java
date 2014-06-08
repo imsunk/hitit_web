@@ -2,6 +2,7 @@ package net.member.action;
 
 import java.io.PrintWriter;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -43,13 +44,15 @@ public class MemberLoginAction implements Action{
 		   		out.println("</script>");
 		   		out.close();
 		   		return null;
-		   	}else{		   		
+		   	}else if(result==1){
 		   		//로그인 성공
-		   		session.setAttribute("id", member);
-		   		
+		   		session.setAttribute("id", member.getM_ID());
+//		   		System.out.println("login success");
+//		   		System.out.println(member.getM_ID());
 		   		forward.setRedirect(true);
 		   		forward.setPath("./index.me");
-		   		return forward;
 	   		}
-	}
+	   		return forward;
+	 }
 }
+	
