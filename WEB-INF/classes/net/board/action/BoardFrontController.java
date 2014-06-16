@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 	 	throws ServletException, IOException {
 		 String RequestURI=request.getRequestURI();
 		 String contextPath=request.getContextPath();
+		 System.out.println(contextPath);
 		 String command=RequestURI.substring(contextPath.length());
+		 System.out.println(command);
 		 ActionForward forward=null;
 		 Action action=null;
 

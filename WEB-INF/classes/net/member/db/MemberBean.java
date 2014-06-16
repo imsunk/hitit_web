@@ -28,8 +28,9 @@ public class MemberBean {
 		M_NAME = member_name;
 	}
 	
-	public void setMajor(String major){
-		major = major;
+	public void setMajor(String member_major){
+		major = member_major;
+		System.out.println("in getter major");
 	}
 	
 	public String getMajor(){
@@ -43,16 +44,18 @@ public class MemberBean {
 		M_EMAIL = member_email;
 	}
 	
-	public void setNickName(String nickName){
-		nickName = nickName;
+	public void setNickName(String member_nickName){
+		nickName = member_nickName;
+		System.out.println("in getter member nickname");
 	}
 	
 	public String getNickName(){
 		return nickName;
 	}
 
-	public void setAddress(String address){
-		address = address;
+	public void setAddress(String member_address){
+		address = member_address;
+		System.out.println("in getter address");
 	}
 	
 	public String getAddress(){
