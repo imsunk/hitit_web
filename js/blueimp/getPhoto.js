@@ -14,8 +14,8 @@ $(function () {
 //            method: 'flickr.interestingness.getList',
             method: 'flickr.people.getPhotos',
             user_id: '124940484@N05',
-            per_page:'100',
-            page:'2',
+            per_page:'200',
+            page:'1',
             api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
         },
         dataType: 'jsonp',
