@@ -11,6 +11,12 @@ String category = (String)request.getAttribute("category");
 String[] numberArr = new String[]{ "One" ,"Two" ,"Three" ,"Four" ,"Five" ,"Six" ,"Seven" ,"Eight" ,"Nine" ,"Ten" };
 int nIdx = 0;
 %>
+<% if(session.getAttribute("id")==null) {%>
+	<script>
+	alert("로그인해주세요");
+	location.href='./index.jsp';
+	</script>
+<%}else{%>
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -176,3 +182,5 @@ int nIdx = 0;
 		<script src="js/modern-business.js"></script>
 	</body>
 </html>
+
+<%}%>

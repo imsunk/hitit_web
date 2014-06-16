@@ -12,9 +12,9 @@ $(function () {
         data: {
             format: 'json',
 //            method: 'flickr.interestingness.getList',
-            method: 'flickr.people.getPhotos',
+            method: 'flickr.photos.search',
             user_id: '124940484@N05',
-            per_page:'200',
+            per_page:'100',
             page:'1',
             api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
         },
