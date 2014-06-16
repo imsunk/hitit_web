@@ -1,5 +1,5 @@
  <Context reloadable="true">
-     <Resource name="jdbc/MysqlDB_hitit"
+    <Resource name="jdbc/MysqlDB_hitit"
          auth="Container"
          type="javax.sql.DataSource"
          username="hitit"
@@ -10,7 +10,7 @@
                  useUnicode="true"
                  characterEncoding="UTF8"
          maxActive="500"
-         maxIdle="100"/>
+         maxIdle="100"/> 
      <Resource name="jdbc/MysqlDB_test2"
          auth="Container"
          type="javax.sql.DataSource"
