@@ -71,6 +71,9 @@ public class MemberDAO {
 			pstmt.setString(5, member.getNickName());
 			pstmt.setString(6, member.getM_EMAIL());
 			pstmt.setString(7, member.getAddress());
+//			System.out.println(member.getNickName());
+//			System.out.println(member.getMajor());
+//			System.out.println(member.getAddress());
 			result=pstmt.executeUpdate();
 			if(result!=0){
 				return true;

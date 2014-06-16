@@ -23,10 +23,14 @@ public class MemberJoinAction implements Action{
 	   		member.setM_ID(request.getParameter("id"));
 	   		member.setM_PW(request.getParameter("pw"));
 	   		member.setMajor(request.getParameter("major"));
+	   		
 	   		member.setM_NAME(request.getParameter("name"));
 	   		member.setNickName(request.getParameter("nickName"));
 	   		member.setM_EMAIL(request.getParameter("email"));
 	   		member.setAddress(request.getParameter("address"));
+	   		System.out.println(member.getAddress());
+	   		System.out.println(member.getMajor());
+	   		System.out.println(member.getNickName());
 	   		
 	   		result=memberdao.joinMember(member);
 	   		

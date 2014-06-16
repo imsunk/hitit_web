@@ -1,0 +1,15 @@
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+	margin:0;
+	padding:0;
+}
+body, input, textarea, select, table, button {
+	font-family:"³ª´®°íµñ",NanumGothic,"±¼¸²",Gulim,Helvetica,AppleGothic,Sans-serif;
+	font-size:14px;
+	line-height:1.25em;
+}
+body {
+	background-color:#F4F4F4;
+	color:#000000;
+	position:relative;
+	word-wrap:break-word;
+}
