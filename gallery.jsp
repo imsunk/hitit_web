@@ -1,4 +1,12 @@
-<%@ page errorPage="500.jsp" contentType="text/html; charset=utf-8"%><% response.setHeader("Cache-Control","max-age=0"); %>
+<%@ page contentType="text/html; charset=utf-8"%><%response.setHeader("Cache-Control","max-age=0"); %>
+
+<% if(session.getAttribute("id")==null) {%>
+	<script>
+	alert("로그인해주세요");
+	location.href='./index.jsp';
+	</script>
+<%}else{%>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -77,3 +85,4 @@
 </body>
 
 </html>
+<%}%>
