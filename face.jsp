@@ -6,10 +6,10 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/menu.css">
-
 		<jsp:include page="./templete/script.jspf" />
 	</head>
 	<body>
+		<div></div>
 		<div id="wrap">
 			<jsp:include page="./templete/header.jspf" />
 			<jsp:include page="./templete/navigator.jspf" />
