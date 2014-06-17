@@ -33,6 +33,7 @@ int nIdx = 0;
 		<!-- Add custom CSS here -->
 		<link href="css/modern-business.css" rel="stylesheet">
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/modern-business.css" rel="stylesheet">
 		<%@include file="../in_meta.jspf"%>
 	</head>
 <!-- head 끝 -->
@@ -46,7 +47,7 @@ int nIdx = 0;
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
-						<%=boarddao.getCategoryName(category)%> 게시판
+						<%=boarddao.getCategoryName(category)%> 게시판<br/>
 						<small>공통의 주제로 이야기 합니다</small>
 					</h1>
 					<ol class="breadcrumb">

@@ -188,3 +188,24 @@ footer {
 	height: 20px;
 	margin: 8px;
 }
+
+/* 윤섭 수정*/
+/* 네비게이션 세부 게시글 폰트*/
+.dropdown-menu{
+
+	font-size: 20px;	
+
+	}
+	
+	/*모바일화면 네비게이션 및 게시판 글 조정*/
+@media ( max-width : 480px) {
+	.panel-heading {
+		height: 30px;
+	}
+	.dropdown-menu{
+
+	font-size: 24px;	
+
+	}
+	
+}

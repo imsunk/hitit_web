@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>티켓모아 - 회원가입</title>
+<!----   --->
 <!--
 <link rel="shortcut icon" href="img/favicon.ico"/>
 <link rel="stylesheet" href="css/common.css">
