@@ -2,6 +2,7 @@
 	contentType="text/html; charset=utf-8"
 	import="java.sql.*,javax.sql.*,java.io.*"%>
 <%! 
+
 	// DB 연결할 아이디 생성
 	String url, id = "root", passwd = "";	
 	public void jspInit() {
