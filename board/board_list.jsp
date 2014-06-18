@@ -11,6 +11,7 @@ String category = (String)request.getAttribute("category");
 String[] numberArr = new String[]{ "One" ,"Two" ,"Three" ,"Four" ,"Five" ,"Six" ,"Seven" ,"Eight" ,"Nine" ,"Ten" };
 int nIdx = 0;
 %>
+<!--주석-->
 <% if(session.getAttribute("id")==null) {%>
 	<script>
 	alert("로그인해주세요");
