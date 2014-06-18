@@ -35,6 +35,20 @@ int nIdx = 0;
 		<link href="css/modern-business.css" rel="stylesheet">
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/modern-business.css" rel="stylesheet">
+		<link href="css/flat-ui.css" rel="stylesheet">
+		
+		<!--Flat UI JS-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+		
 		<%@include file="../in_meta.jspf"%>
 	</head>
 <!-- head 끝 -->
@@ -61,9 +75,14 @@ int nIdx = 0;
 					</ol>
 				</div><!-- col-lg-12 -->
 			</div><!-- row -->
-
-
-			<div class="row">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="검색어 입력"
+				onkeydown="if (event.keyCode == 13){ location.href =location.href.split('?')[0]+'?category=<%=category%>&keyword='+this.value; return false;} "
+				style="display: inline-block; width: 300px;margin-right: 20px;" />
+			<a href="./BoardWrite.bo?category=<%=category%>">
+			<span title="새 글 쓰기" class="fui-new"></span></a>
+		</div>
+		<div class="row">
 				<div class="col-lg-12">
 				<!-- article 하나 -->
 			<%
@@ -118,29 +137,32 @@ int nIdx = 0;
 	
 			<!-- 게시판 네비게이션 바 -->
 			<div class="panel-heading board-navibar" height="20">
+				<!--게시판 줄 번호-->
+			<div class="pagination">
+				<ul>
+					<li>
 			<%
 					if(nowpage<=1){ %>
-					[이전]&nbsp;
+					<li class="previous"><a href="#fakelink" class="fui-arrow-left"></a></li>&nbsp;
 			<%
 					} else {
 			%>
-					<a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage-1 %>&category=<%=category%>">[이전]</a>&nbsp;
+					<li class="previous"><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage-1 %>&category=<%=category%>" class="fui-arrow-left"></a></li>&nbsp;
 			<%
 					} // 현재 페이지가 끝인지 체크
 			%>
 			
 			<%
 					for ( int a = startpage ; a <= endpage ; a++){
-						if(a==nowpage){ 
+						if(a==nowpage){ //현재 페이지라면
 			%>
-					[<%=a %>]
+					<li class="active"><a><%=a %></a></li>
 			<%
-						} else {
-			%>
-				<a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=a %>&category=<%=category%>">[<%=a %>]
-				</a>&nbsp;
+						} else {// 현재 페이지 번호가 아님
+			%><li><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=a %>&category=<%=category%>"><%=a %>
+				</a></li>&nbsp;
 			<%
-						} // 현재 페이지 번호가 아님
+						} 
 			%>
 			<%
 					} // 네이게이션 숫자 루프 끝
@@ -149,16 +171,20 @@ int nIdx = 0;
 			<%
 					if(nowpage>=maxpage){
 			%>
-					[다음]
+					<li class="next"><a href="#fakelink" class="fui-arrow-right"></a></li>
 			<%
 					} else {
 			%>
-					<a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage+1 %>&category=<%=category%>">[다음]</a>
+					<li class="next"><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage+1 %>&category=<%=category%>"class="fui-arrow-right"></a></li>
 			<%
 					} // 다음이 있는지 체크
 			%>
-			<input type="text" onkeydown="if (event.keyCode == 13){ location.href =location.href.split('?')[0]+'?category=<%=category%>&keyword='+this.value; return false;} " style="display:inline-block" />
-			<a href="./BoardWrite.bo?category=<%=category%>">[글쓰기]</a>
+			</li>
+			</ul>
+			</div>
+			<!--end 게시판 줄 번호-->
+			
+
 		</div>
 							<!-- /. 게시판 네비게이션 바 -->
 			<%
