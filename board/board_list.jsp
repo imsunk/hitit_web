@@ -32,11 +32,15 @@ int nIdx = 0;
 		<link href="css/bootstrap.css" rel="stylesheet">
 
 		<!-- Add custom CSS here -->
-		<link href="css/modern-business.css" rel="stylesheet">
+		
+		
+		<%@include file="../in_meta.jspf"%>
+		<link href="board/css/bootstrap.css" rel="stylesheet">
+		<link href="board/css/bootstrap.min.css" rel="stylesheet">
+		
+		<link href="css/flat-ui.css" rel="stylesheet">
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/modern-business.css" rel="stylesheet">
-		<link href="css/flat-ui.css" rel="stylesheet">
-		
 		<!--Flat UI JS-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -49,15 +53,14 @@ int nIdx = 0;
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
 		
-		<%@include file="../in_meta.jspf"%>
+		
 	</head>
 <!-- head 끝 -->
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<%@include file="../in_navibar.jspf"%>
 		</nav>
-
-		<div class="container">
+		<div class="container"style="margin-top: 3%;">
 			<!-- 게시판 설명 부분 -->
 			<div class="row">
 				<div class="col-lg-12">
@@ -75,6 +78,7 @@ int nIdx = 0;
 					</ol>
 				</div><!-- col-lg-12 -->
 			</div><!-- row -->
+			
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="검색어 입력"
 				onkeydown="if (event.keyCode == 13){ location.href =location.href.split('?')[0]+'?category=<%=category%>&keyword='+this.value; return false;} "
@@ -92,7 +96,9 @@ int nIdx = 0;
 			%>
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
+						
 							<div class="panel-heading">
+							
 								<h4 class="panel-title board-item">
 									<a class="accordion-toggle num" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=numberArr[nIdx]%>">
 										<%= bl.getB_NUM() %>
@@ -107,7 +113,7 @@ int nIdx = 0;
 							//out.println("-");
 						} 
 			%>
-									<a data-role="button" class="accordion-toggle title" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=numberArr[nIdx]%>" href="<%=request.getContextPath()%>/BoardDetailAction.bo?num=<%=bl.getB_NUM()%>&category=<%=bl.getCATEGORY() %>">
+									<a data-role="button" class="accordion-toggle title"  href="<%=request.getContextPath()%>/BoardDetailAction.bo?num=<%=bl.getB_NUM()%>&category=<%=bl.getCATEGORY() %>" >
 									<%=bl.getB_SUBJECT() %>
 									</a>
 									<a data-role="button" class="accordion-toggle author" href="<%=request.getContextPath()%>/BoardDetailAction.bo?num=<%=bl.getB_NUM()%>&category=<%=bl.getCATEGORY() %>">
@@ -121,11 +127,13 @@ int nIdx = 0;
 <!-- 									</a> -->
 								</h4>
 							</div>
+							
 							<div id="collapse<%=numberArr[nIdx]%>" class="panel-collapse collapse">
 								<div class="panel-body">
 									<%=bl.getB_CONTENT()%>
 								</div>
 							</div>
+							
 						</div>
 			<%
 						nIdx++;
@@ -134,20 +142,19 @@ int nIdx = 0;
 					</div>
 				</div>
 			</div>
-	
+	</div><!-- /.container -->
 			<!-- 게시판 네비게이션 바 -->
-			<div class="panel-heading board-navibar" height="20">
+			<div class="panel-heading board-navibar">
 				<!--게시판 줄 번호-->
-			<div class="pagination">
-				<ul>
+				<ul class="pagination">
 					<li>
 			<%
 					if(nowpage<=1){ %>
-					<li class="previous"><a href="#fakelink" class="fui-arrow-left"></a></li>&nbsp;
+					<li class="disabled"><a href="#fakelink" class="fui-arrow-left"></a></li>
 			<%
 					} else {
 			%>
-					<li class="previous"><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage-1 %>&category=<%=category%>" class="fui-arrow-left"></a></li>&nbsp;
+					<li class="previous"><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=nowpage-1 %>&category=<%=category%>" class="fui-arrow-left"></a></li>
 			<%
 					} // 현재 페이지가 끝인지 체크
 			%>
@@ -160,7 +167,7 @@ int nIdx = 0;
 			<%
 						} else {// 현재 페이지 번호가 아님
 			%><li><a href="<%=request.getContextPath()%>/BoardList.bo?page=<%=a %>&category=<%=category%>"><%=a %>
-				</a></li>&nbsp;
+				</a></li>
 			<%
 						} 
 			%>
@@ -171,7 +178,7 @@ int nIdx = 0;
 			<%
 					if(nowpage>=maxpage){
 			%>
-					<li class="next"><a href="#fakelink" class="fui-arrow-right"></a></li>
+					<li class="disabled"><a href="#fakelink" class="fui-arrow-right"></a></li>
 			<%
 					} else {
 			%>
@@ -180,13 +187,20 @@ int nIdx = 0;
 					} // 다음이 있는지 체크
 			%>
 			</li>
-			</ul>
-			</div>
-			<!--end 게시판 줄 번호-->
 			
+			</ul>
+			<!--end 게시판 줄 번호-->
+			<!-- <ul class="pagination">
+                <li class="disabled"><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+              </ul> -->
 
-		</div>
-							<!-- /. 게시판 네비게이션 바 -->
+				</div>			<!-- /. 게시판 네비게이션 바 -->
 			<%
 				} // 리스트 항목이 1개 이상 존재 하면
 			%>
