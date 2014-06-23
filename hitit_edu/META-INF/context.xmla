@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<context>	
-	<Resource auth="Container" driverClassName="cubrid.jdbc.driver.CUBRIDDriver"
-		factory="org.apache.commons.dbcp.BasicDataSourceFactory" initialSize="10"
-		loginTimeout="10" maxActive="10" maxIdle="10" maxWait="5000" name="jdbc/CubridDB"
-		password="hitit113112" poolPreparedStatements="true" testOnBorrow="true"
-		type="javax.sql.DataSource" url="jdbc:cubrid:localhost:33000:test:::charset=UTF-8"
-		username="dba" />
-</context>

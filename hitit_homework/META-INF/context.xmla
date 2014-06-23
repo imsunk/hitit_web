@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<context>	
-	<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver"
-		factory="org.apache.commons.dbcp.BasicDataSourceFactory" initialSize="10"
-		loginTimeout="10" maxActive="10" maxIdle="10" maxWait="5000" name="jdbc/MysqlDB"
-		password="wjstks" poolPreparedStatements="true" testOnBorrow="true"
-		type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/work:::charset=UTF-8"
-		username="root" />
-</context>
