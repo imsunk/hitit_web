@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+		<link rel="stylesheet" type="text/css" href="../css/mobile.css"/>
+	</head>
+	<style>
+	div input 
+	{
+		width:40px;
+		height:40px;
+	}
+	</style>
+	<body>		
+		<canvas id="canvas" width="300" height="300" style="border:solid 1px #000000; background-color:#ffffff;">이 브라우저에서는 HTML5 CANVAS를 지원하지 않습니다.</canvas>
+
+		<!--
+		touches log : <span id="touchLog"></span><br />
+		touches point : <span id="touchX"></span>, <span id="touchY"></span><br />
+		-->
+
+		<!-- 라인스타일 -->
+		Line :
+		<select id="lineWeight">
+			<option value="1"  selected>1</option>
+			<option value="2">2</option>
+			<option value="4">4</option>
+			<option value="8">8</option>
+			<option value="16">16</option>
+			<option value="32">32</option>
+		</select>
+		<div>
+			<input type="button" alt="흑" style="background-color:#000000;" />
+			<input type="button" alt="회1" style="background-color:#333333;" />
+			<input type="button" alt="회2" style="background-color:#666666;" />
+			<input type="button" alt="회3" style="background-color:#999999;" />
+			<input type="button" alt="회4" style="background-color:#CCCCCC;" />
+			<input type="button" alt="흰" style="background-color:#FFFFFF;" />
+			<br />
+			<input type="button" alt="빨" style="background-color:#ff0000;" />				
+			<input type="button" alt="주" style="background-color:#FF7F00;" />
+			<input type="button" alt="노" style="background-color:#FFFF00;" />
+			<input type="button" alt="초" style="background-color:#009900;" />
+			<input type="button" alt="파" style="background-color:#0099FF;" />
+			<input type="button" alt="남" style="background-color:#082567;" />
+			<input type="button" alt="보" style="background-color:#8000FF;" />
+		</div>		
+		<div>
+			<input type="button" id="new" value="new" style="width:80px; " />
+			<input type="button" id="eraser" value="eraser" style="width:80px;" />
+		</div>
+
+		<script type="text/javascript" src="../jquery/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+		$(function()
+		{
+			$("#canvas").width( document.width );
+		});
+
+		// 색상
+		var color = $("div input:eq(0)").css("background-color");
+		$("div input").click(function(event)
+		{
+			mode = "draw";
+			color = $(this).css("background-color");
+		});
+
+		// 라인 두께 
+		var lineWeight = $("#lineWeight").val();
+		$("#lineWeight").change(function(event)
+		{
+			mode = "draw";
+			lineWeight = $(this).val();
+		});
+
+		// 지우개
+		$("#eraser").click(function(event)
+		{
+			mode = "eraser";
+		});
+
+		// 모두지우기
+		$("#new").click(function(event)
+		{
+			ctx.clearRect(0,0, $("#canvas").width(), $("#canvas").height() );
+			$(this).blur();
+		});
+
+
+		var mode = 1;
+		var canvas = document.querySelector("#canvas");		
+		var ctx = canvas.getContext("2d");		// CanvasRenderingContext2D 
+
+		// touch start
+		canvas.addEventListener("touchstart", function(event) {
+			var touch = event.touches[0];
+			/*
+			document.querySelector("#touchLog").innerHTML = "[START] "
+										+ "touches.length : " + event.touches.length
+										+ "/ startX : " + touch.pageX
+										+ "/ startY : " + touch.pageY;
+			*/
+
+			ctx.beginPath();
+			if(mode == "eraser")
+			{
+				ctx.strokeStyle = "rgb(255,255,255)";
+				ctx.lineWidth = 10;
+			}
+			else
+			{
+				ctx.strokeStyle = color;		
+				ctx.lineWidth	= lineWeight;
+			}
+
+
+			ctx.moveTo(touch.pageX, touch.pageY); 
+		});
+		// touch move
+		canvas.addEventListener("touchmove", function(event) {
+		    event.preventDefault();
+			/*
+			document.querySelector("#touchX").innerHTML = event.touches[0].pageX;
+			document.querySelector("#touchY").innerHTML = event.touches[0].pageY;
+			*/
+			ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY);
+			ctx.stroke();
+		});
+		// touch end
+		canvas.addEventListener("touchend", function(event) {
+			//document.querySelector("#touchLog").innerHTML = "[END] touches.length : " + event.touches.length;
+
+			ctx.closePath();
+			ctx.save();
+			
+		});
+		// touch cancel
+		canvas.addEventListener("touchcancel", function(event) {
+			// touch start 들어온후에 touchEnd가 안일어나고 끝난경우... 
+			// 예를들어 touchmove에서 alert() 띄우면 touchcancel 이벤트가 발생함.
+
+			ctx.closePath();
+			ctx.save();
+
+			//document.querySelector("#touchLog").innerHTML = "[CANCEL] touches.length : " + event.touches.length;
+		});		
+		
+		</script>
+	</body>
+</html>

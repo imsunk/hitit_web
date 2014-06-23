@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hittok>
+	<hittok_item>
+		<room>A</room>
+		<date>130118175500</date>
+		<name>김선호</name>
+		<msg>hittok!!! 1등</msg>
+	</hittok_item>
+	<hittok_item>
+		<room>B</room>
+		<date>130118175511</date>
+		<name>김선호1</name>
+		<msg>hittok!!! 2등</msg>
+	</hittok_item>
+</hittok>
