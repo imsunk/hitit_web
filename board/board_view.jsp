@@ -25,7 +25,7 @@
 <link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/modern-business.css" rel="stylesheet">
 <link href="board/css/board_view.css" rel="stylesheet">
-
+<link href="css/index_main.css" rel="stylesheet">
 
 </head>
 <!-- head 끝 -->
@@ -50,7 +50,7 @@
 							by <a href="#fakelink"><%=board.getB_NAME() %></a>
 						</p>
 						<hr>
-						<span class="glyphicon glyphicon-time"></span> Posted on 2014 </br>
+						<span class="glyphicon glyphicon-time"></span> Posted on <%=board.getB_DATE()%></br>
 						<hr>
 						<div class="panel-body">
 						<%

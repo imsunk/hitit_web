@@ -4,10 +4,12 @@
 
 	<!-- Add custom CSS here -->
 	
-	<link href="css/modern-business.css" rel="stylesheet">
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/index_main.css" rel="stylesheet">
+	<link href="css/bootstrap-flatUI.min.css" rel="stylesheet">
+
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/modern-business.css" rel="stylesheet">
+<link href="css/flat-ui.css" rel="stylesheet">
+<link href="css/index_main.css" rel="stylesheet">
 	
 	
 	<!--<link href="font-awesome/css/NanumGothic.css" rel="stylesheet">-->

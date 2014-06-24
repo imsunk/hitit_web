@@ -209,4 +209,15 @@ footer {
 	}
 	
 }
+/* 게시판 데이터 밑줄제거 */
+.board-data{
+	text-decoration:none !important;
+	font:bold;
+	color: #2c3e50;
+}
+/* 네비게이션과 게시판을 띄기위해 */
+.row{
+	margin-top:3%;
+	
+}
 /*f*/

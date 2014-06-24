@@ -108,9 +108,9 @@
 	</div>
 	<div class="joinBanner">
 		<div class="joinWrap">
-			<div class="join">
+			<!-- <div class="join">
 				<img src="./img/joinus.gif">
-			</div>	
+			</div> -->	
 			<div class="Banner">
 			<form class="form-horizontal"action="./MemberJoinAction.me" id = "joinForm" method="post">
 				<div class="form-group has-success">
